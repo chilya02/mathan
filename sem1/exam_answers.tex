@@ -1,0 +1,1073 @@
+\documentclass[12pt, fleqn]{article}
+% Эта строка — комментарий, она не будет показана в выходном файле
+\usepackage{cmap}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[english, russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage[makeroom]{cancel}
+\usepackage{enumerate}
+
+\usepackage{tikz}
+\title{Ответы МатАн}
+\date{26.12.2024}
+\author{Черепанов Илья}
+
+
+\begin{document}
+	\maketitle
+	\clearpage
+	\tableofcontents{}
+	\clearpage
+	\section{Множества на числовой прямой; определение окрестности конечной точки. Бесконечные точки.}
+	\subsection{Определение множества.}
+	\textbf{\textit{Множество}} -- совокупность объектов, объединенных по какому-то признаку.
+	\\
+	Объекты, из которых состоит множество, нахываются его \textbf{\textit{элементами}}.
+	\\
+	Множества принято обозначать заглавными буквами латинского алфавита $\{A,B,...,X,Y,...\}$, а их элементы -- малыми буквами $\{a,b,...,x,y,...\}$.
+	\\
+	Множество, не содержащее ни одного элемента, называется \textbf{\textit{пустым}}, обозначается символом $\varnothing$.
+	\\
+	Множество $A$ называется \textbf{\textit{подмножеством}} множества $B$, если каждый элемент множества $A$ является элементом множества $B$. Обозначается $A \subset B$.
+	\\
+	Говорят, что множества $A$ и $B$ \textbf{\textit{равны}} или \textbf{\textit{совападают}}, и пишут $A=B$, если $A \subset B$ и $B \subset A$. То есть, если множества состоят из одних и тех же элементов.
+	\\
+	\textbf{\textit{Объединением}} (или суммой) множеств A и B называется множество, состоящие из элементов, принадлежащих хотя бы одному их этих множеств. Обозначается $A \cup B$ (или$A+B$). Кратко можно записать $A\cup B = \{x\colon x\in A$ или $x \in B\}$
+	\\
+	\textbf{\textit{Пересечением}} (или произведением) множеств $A$ и $B$ называется множество, состоящее из элементов, каждый из которых принадлежит множеству $A$ и множеству $B$. Обозначают $A \cap B$ (или$A \cdot B$). Кратко можно записать $A\cap B = \{x\colon x\in A$ и $x \in B\}$
+	\subsection{Числовые множества. Множества на прямой.}
+	Множества, элементами которых явлвяются числа, называются \textbf{\textit{числовыми}}.\\
+	Примеры числовых множеств: \\
+	$\mathbb{N} = \{1; 2; 3; ...; n; ...\}$ - множество натуральных чисел.\\
+	$\mathbb{Z} = \{\pm1; \pm2; \pm3; ...; \pm n; ...\}$ - множество целых чисел.\\
+	$\mathbb{Q} = \{\frac m n\colon  m \in \mathbb{Z}, n \in \mathbb{N} \}$ - множество рациональных чисел.\\
+	$\mathbb{R}$ -- множество вещественных чисел.\\
+	Между этими множествами существует соотношение: \\
+	$\mathbb{N \in Z \in Q \in R}$\\
+	Действительные числа, не являющиеся рациональными, нызываются \textit{иррациональными}.\\\\
+	Свойства $\mathbb{R}$:
+	\begin{enumerate}
+		\item Множество \textit{упорядоченное}:  для любых двух различных чисел a и b справедливо $a < b$ или $a > b$
+		\item Множество \textit{плотное}:  между двумя раличными числами $a$ и $b$ содержится бесконечное множество действительных чисел.
+		\item Множество \textit{непрерывное}. Пусть множество $\mathbb{R}$ разбито на два непустых класса $A$ и $B$ таких, что каждое действительное число содержится только в одном классе и для каждой пары чисел $a \in A$ и $b \in B$ выполнено неравенство $a<b$. Тогда существует единственное число $c$, удовлетворяющее неравенству $a \leq c \leq b  (\forall a \in A, \forall b \in B)$. Оно отделяет числа класса $A$ от чисел класса $B$. Число $c$ является либо наибольшим числом в классе $A$ (тогда в классе $B$ нет наименьшего числа), либо наименьшим числом в классе $B$ (тогда в класе $A$ нет наибольшего).
+	\end{enumerate}
+	Свойство непрерывности позволяет установить взаимно-однозначное соответствие между множеством всех действительных чисел и множеством всех точек прямой. Это означает, что каждому числу $x \in \mathbb{R}$ соответствует единственная точка числовой оси и наоборот.\\\\
+	Пусть $a, b \in \mathbb{R}, a < b$\\
+	\textit{Числовыми промежутками} (интервалами) называют подмножества всех действительных чисел, имеющих следующий вид: 
+	\begin{description}
+		\item $[a;b]=\{x\colon  a \leq x \leq b\}$ -- отрезок;
+		\item $(a;b)=\{x\colon  a < x < b\}$ -- интервал;
+		\item $[a;b)=\{x\colon a \leq x < b\}$;
+		\item $(a;b]=\{x\colon a < x \leq b\}$ -- полуоткрытые интервалы (или полуоткрытые отрезки);
+		\item $(-\infty;b]=\{x\colon x\leq b\}$;
+		\item $(-\infty;b)=\{x\colon x<b\}$;
+		\item $[a;\infty)=\{x\colon  x\geq a\}$;
+		\item $(a;\infty)=\{x\colon  x> a\}$;
+		\item $(-\infty;\infty)=\{x\colon  -\infty < x < \infty\} = \mathbb{R}$ -- бесконечные интервалы (промежутки);
+	\end{description}
+	\subsection{Окрестность конечной точки.}
+	Пусть $x_0$ -- любое действительное число. \textbf{\textit{Окрестностью}} точки $x_0$ называется любой интервал $(a;b)$, содержащий точку $x_0$. В частоности итервал $(x_0-\varepsilon, x_0+\varepsilon)$, где $\varepsilon > 0$, называется \textbf{\textit{$\varepsilon$-окрестностью}} точки $x_0$. Число $x_0$ называется \textbf{\textit{центром}}, а число $\varepsilon$ -- \textit{радиусом}.
+	$$\begin{tikzpicture}
+		\draw (3,0) .. controls (4,0.4) .. (5,0);
+		\draw (4,0.4)node[above]{$\varepsilon$};
+		\draw (7,0) .. controls (6,0.4) .. (5,0);
+		\draw (6,0.4)node[above]{$\varepsilon$};
+		\draw (5.7,0.1) -- (5.7,-0.1) node[below=-0.9]{$x$}
+		 (3,0.1)--(3,-0.1) node[below=-0.9]{$x_0-\varepsilon$}
+		 (7,0.1)--(7,-0.1) node[below=-0.9]{$x_0+\varepsilon$}
+		 [->] (0,0) -- (10,0) node[below=1] {$x$} coordinate(x axis);
+		\fill (1, 0) circle (2pt) node[above=1] {$O$}
+		 (5,0) circle (2pt) node [below=1]{$x_0$};		
+	\end{tikzpicture}$$
+	Если $x \in (x_0-\varepsilon;x_0+\varepsilon)$, то выполняется неравенство $x_0 - \varepsilon<x<x_o+\varepsilon$, или, что то же, $|x-x_0|<\varepsilon$. Выполнение последнего неравенства означает попадание точки $x$ в $\varepsilon$-окрестность точки $x_0$.
+	\section{Определение функции. Область определения. Монотонная функция. Четная и  нечетная функции. Обратная функция. Сложная функция. Элементарные функции.
+	}
+	\subsection{Определение функции. Область определения}
+	Пусть даны два непустых множества $X$ и $Y$. Соответствие $f$, которое каждому элементу $x \in X$ сопостовляет один и только один элемент $y \in Y$, называется \textbf{\textit{функцией}} и записывается $y=f(x), x \in X$ или $f\colon  X \rightarrow Y$. Говорят ещё, что функция $f$ \textbf{\textit{отображает}} множество $X$ на множество $Y$.\\
+	Множество $X$ называется \textit{\textbf{областью определения}} функции $f$ и обозначается $D(f)$. Множество $Y$ называется \textit{множеством значений} функции $f$ и обозначается $E(f)$.
+	\subsection{Четность/нечетность}
+	Функция, определенная на множестве $D$, называется \textbf{\textit{четной}}, если $\forall x \in D$ выполняются условия $-x \in D$ и $f(-x)=f(x)$; \textbf{\textit{нечетной}}, если $\forall x \in D$ выполняются условия $-x \in D$ и $f(-x)=-f(x)$; остальные относятся к функциям \textbf{общего вида}.
+	\subsection{Монотонность.}
+	Пусть функция $y=f(x)$ определена на множестве $D$ и пусть $D_1\subset D$. Если для любых значений $x_1, x_2 \in D_1$ аргументов их неравенства $x_1 < x_2 $ вытекает неравенство
+	\begin{description}
+		\item $f(x_1) < f(x_2)$, то функция называется \textbf{\textit{возрастающей}} на множестве $D_1$; 
+		\item $f(x_1)\leq f(x_2)$ -- \textbf{\textit{неубывающей}} на множестве $D_1$;
+		\item $f(x_1)>f(x_2)$ -- \textbf{\textit{убывающей}} на множестве $D_1$;
+		\item $f(x_1) \geq f(x_2)$ -- \textbf{\textit{невозрастающей}} на множестве $D_1$;
+	\end{description}
+	Возрастающие, невозрастающие, убывающие и неубывающие функции на множестве $D_1$ называются \textbf{\textit{монотонными}} на этом множестве, а возрастающие и убывающие - \textbf{\textit{строго монотонными}}. Интервалы, в которых функция монотонна, называются \textbf{\textit{интервалами монотонности}}
+	\subsection{Обратная функция.}
+	Пусть задана функция $y=f(x)$ с обласьтю определения $D$ и множеством значений $E$. Если каждому знчению $y\in E$ соответствует единственное значение $x\in D$, то определена функция $x = \varphi(y)$ с областью определения $E$ и множеством значений $D$. Такая функция $\varphi(y)$ называется \textbf{\textit{обратной}} к функции $f(x)$ и записывается как $x=\varphi(y)=f^{-1}(y)$. Про функции $y=f(x)$ и $x=\varphi(y)$ говорят, что они являются взаимно обратными. Чтобы найти функцию $x=\varphi(y)$ достаточно решить уравнение $y=f(x)$ относительно $x$ (если это возможно).\\\\
+	Из определения обратной функции вытекает, что функция $y=f(x)$ имеет обратную тогда и только тогда, когда функция $f(x)$ задает взаимно однозначное соответствие между множествами $D$ и $E$. Отсюда следует, что любая \textbf{\textit{строго монотонная функция имеет обратную}}.
+	\subsection{Сложная функция.}
+	Пусть функция $y=f(u)$ определена на множестве $D$, а функция $u=\varphi(x)$ на множестве $D_1$, причем для $\forall x \in D_1$ соответствующее значение $u=\varphi(x) \in D$. Тогда на множестве $D_1$ определена функция $y=f(\varphi(x))$, которая называется \textbf{\textit{сложной функцией}} от $(x)$ (или \textbf{\textit{суперпозицией}} заданных функций).\\
+	Переменную $u=\varphi(x)$ называют \textit{промежуточным аргументом} сложной функции.
+	\subsection{Элементарные функции.}
+	Основные элементарыне функции: 
+	\begin{enumerate}
+		\item \textit{Показательная} функция $y=a^x, a>0, a\neq0$
+		\item \textit{Степенная} функция $y=x^\alpha, \alpha \in \mathbb{R}$
+		\item \textit{Логарифмическая} функция $y=\log_{a}x, a > 0, a \neq 1$
+		\item \textit{Тригонометрические }функции $y=\sin x, y=\cos x, y=\tg x, y =\ctg x$
+		\item \textit{Обратные тригонометрические }функции $y=\arcsin x, y=\arccos x, y=\arctg x, y =\arcctg x$
+	\end{enumerate}
+	Функция, задаваемая одной формулой, составленной из основных элементарных функций и постоянных с помощью конечного числа арифметических операций (сложения, вычитания, умножения деления) и операций взятия функции от функции, называется \textbf{\textit{элементарной функцией}}.
+	\section{Определение предела последовательности; определение предела функции в точке (конечной и бесконечной). Простейшие пределы $\lim_{x\to a} c=c$ и $\lim_{x \to a} x=a$ . Единственность конечного предела.}
+	\subsection{Предел последовательности}
+	Под \textbf{\textit{числовой последовательностью}} $x_1, x_2, x_3,...,x_n,...$ понимается функция $x_n = f(n)$, заданная на множестве $\mathbb{N}$, кратко обозначается $\{x_n\}$.\\\\
+	Число $a$ называется \textbf{\textit{пределом последовательности}} $\{x_n\}$, если для любого положительного числа $\varepsilon$ найдется такое натуральное число $N$, что при всех $n>N$ выполняется неравенство $|x_n-a|<\varepsilon$. 
+	В этом случае пишут $$\lim_{x\to \infty} x_n=\lim x_n=a$$ или $x_n \to a$.\\
+	Короткое определение предела:
+	$$\left( \forall \varepsilon > 0  \exists N \colon \forall n > N \Longrightarrow \left|x_n-a \right| < \varepsilon \right) \Longleftrightarrow \lim_{n\to\infty}x_n=a $$
+	Геометрическая интерпритация:
+	$$\begin{tikzpicture}
+		\draw 
+		(3,0.2)--(3,-0.2) node[below=-2]{$a-\varepsilon$}
+		(7,0.2)--(7,-0.2) node[below=-2]{$a+\varepsilon$}
+		\foreach \x in {70,68.5 , ..., 10.5}{
+				(5+200/\x^2,0.1)--(5+200/\x^2,-0.1) 
+				(5-200/\x^2,0.1)--(5-200/\x^2,-0.1) 
+			}
+		[->] (0,0) -- (10,0) node[below=5] {$x$} coordinate(x axis);
+		\fill (1, 0) circle (2pt) node[above=1] {$O$}
+		(5,0) circle (2pt) node [below=5]{$a$};
+	\end{tikzpicture}$$
+	Чило $a$ называется пределом последовательности $\{x_n\}$, если для любой $\varepsilon$-окрестности точки $a$ найдется $N \in \mathbb{N}$, что все значения $x_n$, для которых $n > N$, попадут в $\varepsilon$-окрестность точки $a$.
+	\subsection{Предел функции в конечной точке}
+	\paragraph{Определение 1 (на языке последовательностей или по Гейне).} Число $A$ называется \textbf{\textit{пределом функции}} $y=f(x)$ в точке $x_0$ (или при $x \to x_0$), если для любой последовательности допустимых значений аргумента $x_n, n \in \mathbb{N} (x_n \neq x_0)$, сходящейся к $x_0$ (т.е. $\lim_{n \to \infty}x_n=x_0$), последовательность соотоветвующих значений функции $f(x_n), n \in \mathbb{N}$, сходится к числу $A$ (т.е. $\lim_{n \to \infty}f(x_n)=A$).\\
+	В этом случае пишут $\lim_{x\to x_0}f(x)=A$ или $f(x) \to A $ при $x \to x_0$. Геометрический смысл предела функции $\lim_{x \to x_0}f(x) = A$ означает, что для всех точек $x$, достаточно близких к точке $x_0$, соответствующие значения функции как угодно мало отличаются от числа $A$.
+	\paragraph{Определение 2 (на языке $\varepsilon$-$\delta$ или по Коши)}
+	Число $A$ наызается пределом функции в точке $x_0$(или при $x \to x_0$), если для любого положительного $\varepsilon$ найдется такое положительное число $\delta$, что для всех $x \neq x_0$, удовлетворяющих неравенству $|x-x_0|<\delta$, выполняется неравенство $|f(x) - A| < \varepsilon$.
+	Записывают $\lim_{x \to x_0} f(x) = A$. Это определение коротко можно записать так $$\left( \forall \varepsilon > 0 \exists \delta>0 \forall x \colon|x-x_0| < \delta, x \neq x_0 \Longrightarrow |f(x) - A| < \varepsilon \right) \Longleftrightarrow\lim_{x\to x_0}f(x) = A$$
+	Геометрический смысл предела функции
+	 $A=\lim_{x \to x_0}f(x)$, если для любой $\varepsilon$-окрестности точки $A$ найдется такая $\delta$-окрестность точки $x_0$, что для всех $x\neq x_0$ из этой $\delta$-окрестности соответствующие значения функции $f(x)$ лежат в $\varepsilon$- окрестности точки $A$. Иными словами, точки графика функции $y=f(x)$ лежат внутри полосы шириной $2\varepsilon$, ограниченной прямыми $y=A+\varepsilon, y=A-\varepsilon$. Очевидно, что величина $\delta$ зависит от выбора $\varepsilon$, поэтому пишут $\delta = \delta(\varepsilon).$
+	\subsection{Предел функции в бесконечной точке}
+	Пусть функция $y=f(x)$ определена в промежутке $(-\infty;\infty)$. Число $A$ называется \textbf{\textit{Пределом функции $f(x)$ при $x \to \infty$}}, если для любого положительного числа $\varepsilon$ существует такое счисло $M=M(\varepsilon) > 0$, что при всех $x$, удовлетворяющих неравенству $|x| > M$ выполняется неравенство $|f(x) - A| < \varepsilon$.\\ Коротко:
+	$$\left( \forall\varepsilon>0\exists M>0 \forall x\colon |x|>M \Longrightarrow |f(x)-A| < \varepsilon \right) \Longleftrightarrow \lim_{x\to\infty}f(x)=A$$ 
+	Если $x\to +\infty$, то пишут $A=\lim_{x\to+\infty}f(x)$, если $x \to -\infty$, то -- $A=\lim_{x\to-\infty}f(x).$ Геометрический смысл этого определения таков:
+	для $\forall \varepsilon > 0 \exists M > 0$, что при $x\in \left(-\infty; -M\right)$ или $x \in \left(M;+\infty\right)$ соответствующие значения функции $f(x)$ попадают в $\varepsilon$-окрестность точки $A$, т.е. точки графика лежат в полосе шириной $2\varepsilon$, ограниченной прямыми $y=A+\varepsilon$ и $y=A-\varepsilon$.
+	\subsection{Простейшие пределы}
+	\begin{enumerate}
+		\item $\lim_{x\to a}x=a$.\\
+		\textit{Доказательство}:
+		$$\forall \varepsilon > 0 \exists \delta > 0 \colon x \in \mathring{U}_\delta(a) \curvearrowright f(x)=x\in \mathring{U}_\varepsilon(A)$$ $$ \delta = \varepsilon$$
+		$\blacksquare$
+		\item $f(x) = c=const \Longrightarrow \lim_{x\to a} c=c$\\
+		\textit{Доказательство}:
+		$$\forall \varepsilon > 0 \exists \delta > 0 \colon x \in \mathring{U}_\delta (a) \curvearrowright f(x)=c \in \mathring{U}_\varepsilon(c)$$ 
+		$\delta$ -- любое, чтобы окрестность входила в область опредления.
+		$\blacksquare$
+	\end{enumerate}
+	\subsection{Единственность конечного предела.}
+	$\lim_{x\to a}f(x) = A $-- единственный предел.\\
+	\textit{Доказательство}:\\
+	Допустим $f(x) \to A; x \to a$\\
+	$f(x)\to B; x \to a$\\
+	$B>A$\\
+	\begin{equation}
+		\forall \varepsilon > 0 \exists \delta_1\colon x\in \mathring{U}_{\delta_1}(a) \curvearrowright \left( f(x) \in \mathring{U}_\varepsilon(A) \right) \Leftrightarrow \left( A - \varepsilon < f(x) < A+ \varepsilon \right) \label{first}
+	\end{equation} 
+	\begin{equation}
+		\forall \varepsilon > 0 \exists \delta_1\colon x\in \mathring{U}_{\delta_2}(a) \curvearrowright \left( f(x) \in \mathring{U}_\varepsilon(B) \right) \Leftrightarrow \left( B - \varepsilon < f(x) < B+ \varepsilon \right) \label{second}
+	\end{equation} 
+	$\delta = \min\{\delta_1, \delta_2\} \Rightarrow$ при $x\in \mathring{U}_\delta$ выполнены правила $(\ref{first})$ и $(\ref{second})$\\
+	Возьмем $\varepsilon = \frac{B-A}{2}$\\
+	\begin{align*}
+		&\left.
+			\begin{gathered}
+				\begin{aligned}
+					&(\ref{first}) \colon \dots < f(x)<A+\frac{B-A}{2}=\frac{B+A}{2}\\
+					&(\ref{second}) \colon B-\frac{B-A}{2} < f(x)<A+\dots \\
+				\end{aligned}
+			\end{gathered}
+		\right\} \Rightarrow \frac{B+A}{2}< f(x)< \frac{B+A}{2}\Rightarrow \text{Предел единственный}\\
+		&\blacksquare\\
+	\end{align*}
+\section{Свойства функций, стремящихся к конечному пределу (ограниченность функции, имеющей конечный предел; теорема о сжатой переменной; предельный переход в неравенстве).}
+\begin{enumerate}
+	\item $\lim_{x \to a} f(x)=A$ -- единственный
+	\item $\lim_{x \to a} f(x) =A$ -- конечный $\Rightarrow \exists \mathring{U}(a)\colon f(x)$ -- ограничена в $\mathring{U}(a)$
+	\item Предельный переход в неравенстве
+	\begin{multline*}
+		\lim_{x \to a}f(x)=A, \lim_{x \to a}g(x)=B\\
+		f(x)\leq g(x), x \in \mathring{U}(a) \Rightarrow \lim_{x \to a}f(x)\leq \lim_{x \to a}g(x)\\
+		A \leq B\\
+	\end{multline*}
+	\textit{Доказательство:}
+	\begin{multline*}
+			\forall \varepsilon > 0 \exists \delta_1>0\colon x\in \mathring{U}_{\delta_1}(a) \curvearrowright \left( A - \varepsilon < f(x) < A+ \varepsilon \right)\\
+			\forall \varepsilon > 0 \exists \delta_1>0\colon x\in \mathring{U}_{\delta_2}(a) \curvearrowright \left( B - \varepsilon < f(x) < B+ \varepsilon \right)\\
+			\delta = min(\delta_1, \delta_2)\\
+			A-\varepsilon<f(x\leq g(x)<B+\varepsilon)\\
+			A<B+2\varepsilon\\
+			A\leq B\\
+			\blacksquare\\
+	\end{multline*}
+	\item $f(x)\leq\varphi(x)\leq g(x)$ -- Т. о сжатой переменной (двух милиционеров)
+	\begin{multline*}
+		\left.
+			\begin{gathered}
+				\lim_{x \to a}f(x)=A\\
+				\lim_{x \to a}g(x)=A\\
+			\end{gathered}
+		\right\}\Rightarrow \lim_{x \to a}\varphi(x) = A\\
+	\end{multline*}
+	\textit{Доказательство:}
+	\begin{multline*}
+		\forall \varepsilon >0 \exists \delta>0: x \in \mathring{U}_\delta(a)\colon\begin{gathered}
+			A-\varepsilon < f(x)<A+\varepsilon\\
+			A-\varepsilon < g(x)<A+\varepsilon\\
+		\end{gathered}\\
+		A-\varepsilon < f(x)\leq\varphi(x)\leq g(x)<A+\varepsilon\\
+		\blacksquare\\
+	\end{multline*}
+\end{enumerate}
+\section{Односторонние пределы функции в точке.  Необходимое и достаточное условие существования конечного предела(использующее односторонние пределы). Первый замечательный предел: $\lim_{x\to 0}$$\frac{\sin x}{x}$.} 
+\subsection{Односторонние пределы}
+$f(x)$ -- определена на $(b;a), a$ -- конечная точка.\\
+Число $A$ -- предел $f(x)$ слева в точке $a$, если
+$$\forall \varepsilon >0 \exists\delta>0\colon x\in(a-\delta;a)\curvearrowright f(x)\in U_\varepsilon(A)$$
+Обозначение:
+\begin{multline*}
+	\lim_{x \to a-}f(x)\\
+	\lim_{x\to a-0}f(x)\\
+\end{multline*}
+Справа аналогично\\
+\begin{multline*}
+	\lim_{x \to a+}f(x)\\
+	\lim_{x\to a+0}f(x)\\
+\end{multline*}
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	%\draw plot[domain=-1:-0.5] (\x,{1.5+\x/(\x+1.1)});
+	\draw[line width=1pt] plot[domain=-0.5:2] (\x,{1+\x*\x/(\x+2)});
+	\draw[line width=1pt] plot[domain=2:4] (\x, {(4-(\x-2.5)*(\x-2.5))});
+	\draw [dashed] (0,2)--(2,2);
+	\draw [dashed] (0,3.75)--(2,3.75);
+	\draw [dashed] (2,0)--(2,3.75);
+	%\draw [dashed, blue] (2,0)--(2,1);
+	%\draw [dashed, red] (0,3)--(1,3);
+	%\draw [dashed, red] (1,0)--(1,3);
+	\draw [line width=2pt](2,0.1)--(2,-0.1) node [anchor=north]{\textbf{a}};
+	%\draw [line width=2pt] (1,0.1)--(1,-0.1) node [anchor=north]{\textbf{c}};
+	\draw [line width=2pt] (0.1,2)--(-0.1,2) node [anchor=east]{$f(x-0)$};
+		\draw [line width=2pt] (0.1,3.75)--(-0.1, 3.75) node [anchor=east]{$f(x+0)$};
+	%\draw [line width=2pt] (0.1,3)--(-0.1,3) node [anchor=east]{\textbf{d}};
+	
+	%\draw[line width=2pt,blue,-stealth](0,0)--(2,1) node[anchor=south west]{$\boldsymbol{\alpha}$};
+	%\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\beta}$};
+\end{tikzpicture}\\
+\subsection{Необходимое и достаточное условие существования конечного предела}
+$$\lim_{x \to a}f(x)=A \Leftrightarrow \lim_{x \to a-}f(x)=\lim_{x \to a+}f(x)=A$$
+\subsection{Первый замечательный предел}
+\begin{multline*}
+	\lim_{x \to 0}\frac{\sin x}{x}=1\\
+	\lim_{x \to 0}\frac{\tg x}{x}=1\\
+	\lim_{x \to 0}\frac{1 - \cos x}{x^2}=\frac{1}{2}\\
+	\lim_{x \to 0}\frac{\arcsin x}{x}=1\\
+	\lim_{x \to 0}\frac{\arctg x}{x}=1\\
+\end{multline*}
+\section{Теорема о монотонной ограниченной функции и последовательности (без доказательства). Второй  замечательный предел. Доказательство существования .  }
+\subsection{Теорема о монотонной ограниченной последовательности}
+Всякая монотонная ограниченная последовательность имеет предел.\\
+\subsection{Теорема о монотонной ограниченной функции}
+Если функция $f(x)$ монотонна и ограничена при $x<x_0$ или $x>x_0$, то существует соответственно ее левый предел $\lim_{x \to x_0-0}f(x)=f(x_0-0)$ или ее правый предел $\lim_{x \to x_0+0}f(x)=f(x_0+0)$
+\subsection{Второй замечательный предел}
+$$\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x=e$$
+\textit{Доказательство существования:}
+\begin{multline*}
+	\left(1+\frac{1}{n}\right)^n=\sum_{k=0}^{n}C_n^k \frac{1}{n^k}\cdot 1^{n-k}=\sum_{k=0}^{n}\frac{n!}{\left(n-k\right)!\cdot k!}\cdot \frac{1}{n^k}=\\
+	=\sum_{k=0}^{n}\frac{(n-k+1)(n-k+2)\dots(n-(n-1))\cdot n}{k!n^{k}}=\\
+	=1+\sum_{k=1}^{n}\frac{(n-k+1)(n-k+2)\dots(n-(n-1))}{k!n^{k-1}}=\\
+	=1+1+\frac{n-1}{2n}+\frac{(n-1)(n-2)}{3!n^2}+\dots+\frac{(n-(n-1))(n-(n-2)\dots(n-2)(n-1)}{n!n^{n-1}}\\
+	\blacksquare\\
+\end{multline*}
+\textit{Следствия:}
+\begin{enumerate}
+	\item $\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x=e$
+	\item $\lim_{x\to 0}\left(1+x\right)^{\frac{1}{x}}=e$
+\end{enumerate}
+\section{Бесконечно малые функции, их свойства. Необходимое и достаточное условие стремления функции к конечному пределу.}
+\subsection{Б.М.Ф.}
+$$\lim_{x\to x_0}f(x)=0$$
+\textit{Свойства б.м.ф.}
+\begin{enumerate}
+	\item $f(x)$ -- б. м. в точке $a \Rightarrow c\cdot f(x)$ -- б. м. в точке $a$
+	\item $f(x)$ -- б. м. в точке $a; g(x)$ -- ограничена в $U(a)$ или $g(x)$ -- б.м. в точке $a \Rightarrow f(x)\cdot g(x)$ -- б.м. в точке $a$
+	\item $f(x)$ -- б. м. в точке $a; g(x)$ -- б.м. в точке $a \Rightarrow \lim_{x\to a}\left(f(x)+g(x)\right)=0$
+\end{enumerate}
+\subsection{Необходимое и достаточное условие стремления функции к конечному пределу}
+$$\lim_{x \to a}A_{\text{кон}} \Leftrightarrow \lim_{x\to a-0} f(x)=\lim_{x\to a+0}f(x)$$
+\section{Бесконечно большие функции их свойства. Теорема о связи бесконечно малой и бесконечно большой функций.}
+\subsection{Б.Б.Ф.}
+$$\lim_{x\to a}f(x)=\infty$$
+\textit{Свойства Б.Б.Ф.}
+\begin{enumerate}
+	\item $cf(x)$ -- б.б. в точке $а$ $(c\neq 0)$
+	\item $f(x) + A_{\text{кон}}$ -- б.б. в точке $a$
+	\item $f(x)\cdot g(x)$ --б.б. в точке $a$ ($g(x)$ -- б.б.)
+	\item \begin{multline*}
+		\left. \begin{gathered}
+			\lim_{x\to a}f(x)=+\infty\\
+			\lim_{x\to a}g(x)=+\infty\\
+		\end{gathered}\right\}\lim_{x\to a}\left(f(x)+g(x)\right)=+\infty\\
+	\end{multline*}
+\end{enumerate}
+\subsection{Теорема о связи б.м. и б.б. функций}
+\begin{itemize}
+	\item $f(x)$ -- б.б. в точке $a \Rightarrow \frac{1}{f(x)}$ -- б.м. в точке $a$
+	\item $f(x)$ -- б.м. в точке $a \Rightarrow \frac{1}{f(x)}$ -- б.б. в точке $a$
+\end{itemize}
+\section{Предел суммы, произведения и частного функций, стремящихся к конечным пределам.}
+\begin{align*}
+	\text{Пусть  }&\lim_{x\to a} f(x) = A &&\lim_{x\to a} g(x)= B&&
+\end{align*}
+	\begin{enumerate}
+		\item $\begin{gathered}\lim_{x\to a} cf(x)=cA\end{gathered}$
+		\item $\begin{gathered}\lim_{x\to a} \left(f(x) + g(x)\right)=A+B\end{gathered}$
+		\item $\begin{gathered}\lim_{x\to a} \left(f(x) \cdot g(x)\right)=AB\end{gathered}$
+		\item $\begin{gathered}\lim_{x\to a} \left(\frac{f(x)}{g(x)}\right)=\frac{A}{B}\end{gathered}$
+\end{enumerate}
+\section{Сравнение бесконечно малых. Эквивалентные бесконечно малые. Таблица эквивалентных бесконечно малых(доказательство). Теорема о замене бесконечно малой на эквивалентную при вычислении пределов.}
+\subsection{Сравнение б.м.ф.}
+$f(x), g(x)$ -- б.м. в точке $a$
+\begin{align*}
+	\lim_{x\to a}\frac{f(x)}{g(x)} = \begin{cases}
+		\begin{aligned}
+		&0,&& f(x)\text{ более высокого порядка}\\
+		&A\neq0,&&f(x) \text{ и } g(x) \text{ одного порядка}\\
+		&\infty,&&g(x) \text{ более высокого порядка}\\
+		&\nexists,&& \text{несравнимы}\\
+		\end{aligned}
+	\end{cases}
+\end{align*}
+\subsection{Эквивалентные б.м.ф.}
+Предел отношения б.м.ф. ге изменится, если каджую из них (или одну) заменить на эквивалентную б.м.ф.\\
+Если $\begin{gathered}
+	\lim_{x \to a}\frac{\alpha(x)}{\beta(x)}=1
+\end{gathered}$, то $\alpha$ и $\beta$ эквивалентны в точке $a$.\\
+\textit{Доказательство:}
+\begin{multline*}
+	f(x) \sim \alpha(x)\\
+	g(x) \sim \beta(x)\\
+	\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a} \frac{f(x)}{g(x)}\cdot\frac{\alpha(x)}{\alpha(x)}\cdot \frac{\beta(x)}{\beta(x)}=\lim_{x\to a}\cancelto{1}{\frac{f(x)}{\alpha(x)}}\cdot\cancelto{1}{\frac{\beta(x)}{g(x)}}\cdot\frac{\alpha(x)}{\beta(x)}=\\
+	=\lim_{x\to a}\frac{\alpha(x)}{\beta(x)}\\
+\end{multline*}
+\subsection{Таблица эквивалентных б.м.ф.}
+\begin{enumerate}
+	\item $\sin \alpha(x) \sim \alpha(x)$
+	\item $\tg \alpha(x) \sim \alpha(x)$
+	\item $1-\cos \alpha(x)\sim \frac{\left(\alpha(x)\right)^2}{2}$
+	\item $\arcsin \alpha(x)\sim \alpha(x)$
+	\item $\arctg \alpha(x)\sim\alpha(x)$
+	\item $e^{\alpha(x)}-1\sim \alpha(x)$
+	\item $\ln(1+\alpha(x))\sim \alpha(x)$
+	\item $ \left(1+\alpha(x)^n\right)-1\sim xn$
+\end{enumerate}
+\section{Непрерывность функции в точке. Необходимое и достаточное условия непрерывности функции в точке(использующие приращения).}
+\subsection{Непрерывность функции в точке}
+Функция $y=f(x)$ определена в $U(a)$\\
+$f(x)$ -- непрерывна в точке $a$, если существует предел, и он равен значнию функции в этой точке $\begin{gathered}
+	\lim_{x\to a} f(x)= f(a)
+\end{gathered}$
+\subsection{Необходимое и достаточное условия непрерывности функции в точке}
+\begin{multline*}
+	\varDelta f(x) = f(x_1) - f(x)\\
+	x_1=x+\varDelta x\\
+	\varDelta x = x_1-x\\
+	\lim_{\varDelta x\to0}\varDelta f(x) = 0 \Leftrightarrow f(x) \text{ -- непрерывна в точке } x\\
+\end{multline*}
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	%\draw plot[domain=-1:-0.5] (\x,{1.5+\x/(\x+1.1)});
+	\draw[line width=1pt] plot[domain=-0.8:4] (\x,{1+\x*\x/(\x+2)});
+%	\draw[line width=1pt] plot[domain=2:4] (\x, {(4-(\x-2.5)*(\x-2.5))});
+	\draw [dashed] (0,2)--(2,2);
+	\draw [dashed] (0,2.8)--(3,2.8);
+	\draw [dashed] (3,0)--(3,2.8);
+	\draw [dashed] (2,0)--(2,2);
+	%\draw [dashed, blue] (2,0)--(2,1);
+	%\draw [dashed, red] (0,3)--(1,3);
+	%\draw [dashed, red] (1,0)--(1,3);
+	\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$x$};
+	\draw [line width=2pt](3,0.1)--(3,-0.1) node [below]{$x+\varDelta x$};
+	%\draw [line width=2pt] (1,0.1)--(1,-0.1) node [anchor=north]{\textbf{c}};
+	\draw [line width=2pt] (0.1,2)--(-0.1,2);
+	\draw [line width=2pt] (0.1,2.8)--(-0.1, 2.8);
+	%\draw [line width=2pt] (0.1,3)--(-0.1,3) node [anchor=east]{\textbf{d}};
+	
+	%\draw[line width=2pt,blue,-stealth](0,0)--(2,1) node[anchor=south west]{$\boldsymbol{\alpha}$};
+	%\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\beta}$};
+\end{tikzpicture}\\
+\subsection{Свойства непрерывности функции в точке}
+\begin{enumerate}
+	\item $f(x)$ -- непрерывна в точке $x \Rightarrow cf(x)$ -- непрерывна в точке $x$
+	\item $f(x), g(x)$ -- непрерывны в точке $x \Rightarrow \left. \begin{gathered}
+		f(x)+ g(x)\\
+		f(x)\cdot g(x)\\
+	\end{gathered}\right\}$ -- непрерывны в точке $x$
+	\item $f(x)$ -- непрерывна в точке $x_0, f(x_0)\neq 0 \Rightarrow \exists U(x_0)\colon f(x)$ -- того же знака, что $f(x_0)$\\
+	\textit{Доказательство:}\\
+	Пусть $f(x_0) > 0$:
+	\begin{multline*}
+		\lim_{x\to x_0} = f(x_0) \text{, т.е. } \forall \varepsilon > 0 \exists \delta>0\colon x\in U_\delta(x_0)\\
+		f(x_0) - \varepsilon < f(x) < f(x_0)+\varepsilon\\
+		\text{Выберем } \varepsilon\colon f(x_0)-\varepsilon > 0 \Rightarrow \delta \text{ -- искомое}\\
+		\blacksquare\\
+	\end{multline*}
+	\item $f(x), g(x)$ -- непрерывны в точке $x_0$, $g(x)\neq 0\colon$\\
+	$\frac{f(x)}{g(x)}$ -- непрерывна в точке $x_0$
+	\item $u(x)$ -- непрерывна в точке $x_0, u(x_0)=u_0\colon$\\
+	$f(u)$ -- непрерывна в точке $u_0 \Rightarrow f(x)=f(u(x))$ -- непрерывна в точке $x_0$
+	\item Все элементарные функции непрерывны на своей области определения.
+\end{enumerate}
+\section{Свойства функций, непрерывных в точке. Свойства функций, непрерывных на замкнутом промежутке(без доказательства)}
+\subsection{Свойства функций, непрерывных в точке}
+\begin{enumerate}
+	\item Если $f(x)$ -- непрерывна в точке $a$, то существует $U(a)$, в которой $f(x)$ ограничена.
+	\item Если $f(x)$ -- непрерывна в точке $a, f(a)\neq 0$, то в некоторой $U(a) f(x)$ сохраняет свой знак.
+\end{enumerate}
+\subsection{Свойства функций, непрерывных на замкнутом промежутке}
+$f(x)$ --непрерывна на промежутке $[a;b]$, если:
+\begin{enumerate}[\space\space\space1)]
+	\item $f(x)$ -- непрерывна на $(a;b)$
+	\item $f(a+0)=f(a)$
+	\item $f(b-0)=f(b)$
+\end{enumerate}
+\subsection*{1 теорема Вейерштрасса}
+Если $f(x)$ непрерывна на $[a;b]$, то она на нем ограничена.
+\subsection*{2 теорема Вейерштрасса}
+Если $f(x)$ непрерывна на $[a;b]$, то она достигает на нем наибольшее и наименьшее свое значение.
+\subsection*{1 теорема Больцано-Коши}
+$f(x)$ непрерывна на $[a;b]$\\
+$f(a)\cdot f(b)<0\Rightarrow\exists c\in[a;b]\colon f(c)=0$
+\subsection*{3 теорема Больцано-Коши}
+$f(x)$ непрерывна на $[a;b]$\\
+$f(a)=A , f(b)=B \Rightarrow A\neq B \forall C \in (A;B)\exists c \in (a;b)\colon f(c)=C$
+\section{Классификация точек разрыва функции.}
+$f(x)$ определена в $U(a)$ или $\mathring{U}(a)$\\
+$x=a$ -- точка разрыва функции $f(x)$, если выполняется хотя бы одно из условий:
+\begin{enumerate}[\space1)]
+	\item Функция не определена в точке $a$
+	\item Функция определена в точке $a$, но не существует $\begin{gathered}
+		\lim_{x\to a}f(x)
+	\end{gathered}$
+	\item Функция определена, существуют пределы $\begin{gathered}
+		\lim_{x\to a-}f(x)
+	\end{gathered}$ и $\begin{gathered}
+	\lim_{x\to a+}f(x)
+	\end{gathered}$, но не выполняется условие $\begin{gathered}
+	\lim_{x\to a-}f(x)
+	\end{gathered} = \begin{gathered}
+	\lim_{x\to a+}f(x)
+	\end{gathered} = f(a)$
+\end{enumerate}
+\subsection*{Классификация точек разрыва функции}
+\begin{enumerate}[I.]
+	\item $a$ -- точка разрыва $I$-го рода, если $\begin{gathered}
+		\lim_{x\to a-0}f(x)
+	\end{gathered}$ и $\begin{gathered}
+	\lim_{x\to a+0}f(x)
+	\end{gathered}$ -- конечные
+	\begin{enumerate}[1)]
+		\item Если $\begin{gathered}
+			\lim_{x\to a-}f(x)
+		\end{gathered}=\begin{gathered}
+		\lim_{x\to a+}f(x)
+		\end{gathered}$, то $a$ -- точка устранимого разрыва.
+		\begin{tikzpicture}
+			\draw[->] (-0.5,0)--(3,0) node[right]{$x$};
+			\draw[->] (0,-0.5)--(0,3) node[above]{$y$};
+			\draw[line width=1pt] plot[domain=-0.4:1.9] (\x,{1+\x/4});
+			\draw[line width=1pt] plot[domain=2.1:3] (\x,{1+\x/4});
+
+			\draw [dashed] (2,0)--(2,1.5);
+			\draw (2,1.5) circle (3pt);
+			\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$a$};
+		\end{tikzpicture}\\
+				\item Если $\begin{gathered}
+			\lim_{x\to a-}f(x)
+		\end{gathered}\neq\begin{gathered}
+			\lim_{x\to a+}f(x)
+		\end{gathered}$, то $a$ -- точка конечного разрыва.
+		\begin{tikzpicture}
+			\draw[->] (-0.5,0)--(3,0) node[right]{$x$};
+			\draw[->] (0,-0.5)--(0,3) node[above]{$y$};
+			\draw[line width=1pt] plot[domain=-0.4:1.9] (\x,{1+\x/4});
+			\draw[line width=1pt] plot[domain=2.06:3] (\x,{-1.5+\x});
+			
+			\draw [dashed] (2,0)--(2,1.5);
+			\draw (2,1.5) circle (3pt);
+			\draw (2,0.5) circle (3pt);
+			\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$a$};
+		\end{tikzpicture}\\
+	\end{enumerate}
+	\item $a$ -- точка разрыва $II$-го рода, если хотя бы один из $\begin{gathered}
+		\lim_{x\to a-}f(x)
+	\end{gathered}$, $\begin{gathered}
+	\lim_{x\to a+}f(x)
+	\end{gathered}$ -- бесконечный или не существует\\
+	\begin{tikzpicture}
+		\draw[->] (-0.5,0)--(3,0) node[right]{$x$};
+		\draw[->] (0,-0.5)--(0,3) node[above]{$y$};
+		\draw[line width=1pt] plot[domain=-0.4:1.9] (\x,{1+(\x-2)*(\x-2)*\x*\x});
+		\draw[line width=1pt] plot[domain=2.05:3] (\x,{0.8/(\x-1.8)});			
+		\draw [dashed] (2,0)--(2,3);
+		\draw (2,1) circle (3pt);
+		\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$a$};
+	\end{tikzpicture}\\
+\end{enumerate}
+\section{Определение производной. Примеры нахождения производной с помощью определения.}
+$f(x)$ -- определена в $U(x)$\\
+$\varDelta x \colon x + \varDelta x \in U(x)$\\
+$\varDelta f(x) = f(x-\varDelta x)-f(x)$\\
+Предел отношения приращения функции к приращению аргумента называется \textbf{\textit{производной}}.\\
+$$\lim_{\varDelta x \to 0}\frac{\varDelta f(x)}{\varDelta x}=\lim_{\varDelta x \to 0} \frac{f(x+\varDelta x)-f(x)}{\varDelta x} = f^\prime(x)=\frac{df(x)}{d(x)}$$
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+
+	\draw[line width=1pt] plot[domain=-0.8:4] (\x,{1+\x*\x/(\x+2)});
+
+	\draw [dashed] (0,2)--(2,2);
+	\draw [dashed] (0,2.8)--(3,2.8);
+	\draw [dashed] (3,0)--(3,2.8);
+	\draw [dashed] (2,0)--(2,2);
+	
+	\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$x$};
+	\draw [line width=2pt](3,0.1)--(3,-0.1) node [below]{$x+\varDelta x$};
+	\draw [line width=2pt] (0.1,2)--(-0.1,2) node [left] {$f(x)$};
+	\draw [line width=2pt] (0.1,2.8)--(-0.1, 2.8) node [left] {$f(x+\varDelta x)$};
+\end{tikzpicture}
+\section{Геометрический и механический смысл производной. Уравнение касательной к графику функции.}
+\subsection{Геометрический смысл производной}
+\begin{tikzpicture}
+%	\draw[step=1.0,gray! 40,thin] (-5,-1) grid (5.5,4.5);
+	\draw[->] (-5,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	\draw[line width=1pt] plot[domain=-1:5] (\x, {1+(\x - 1)*\x/(\x+4)});
+	\draw[] plot[domain=-5:5] (\x, {(\x+4)/5});
+	\draw[] plot[domain=-2:5] (\x, {(0.5*\x+0.5)});
+	\draw (-0.1,0) arc (0:24:1);
+	\draw (0.3, 0)node[above=-1]{$\alpha$};
+	\draw (-2,0) arc (0:23.2:1);
+	\draw (-1.5, 0)node[above=-1]{$\varphi$};
+%	
+	\draw [dashed] (0,1)--(4,1)[right] node{A};
+	\draw [dashed] (0,2.5)--(4,2.5);
+	\draw [dashed] (4,0)--(4,2.5) node [above] {$M$};
+	\draw [dashed] (1,0)--(1,1) node[above]{$M_0$};
+	
+
+	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$x$};
+	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+	\draw [line width=2pt] (0.1,1)--(-0.1,1) node [left] {$f(x)$};
+	\draw [line width=2pt] (0.1,2.5)--(-0.1, 2.5) node [left] {$f(x+\varDelta x)$};
+	\draw (2.5,0)node[above=-1]{$\varDelta x$};
+\end{tikzpicture}
+$$f^\prime(x)=\lim_{\varDelta x\to a}\frac{f(x+\varDelta x)-f(x)}{\varDelta x}=\frac{MA}{M_0A}=\tg \alpha$$\\
+При $M\to M_0\colon \alpha \to \varphi\Rightarrow f^\prime(x)=\tg\varphi$
+\subsection{Механический смысл производной}
+\begin{tikzpicture}
+
+	\draw[|->, line width=1pt] node [above]{0} (0,0)--(7,0) node[right]{$t$};
+
+	\draw [line width=2pt](3,0.1)--(3,-0.1) node [above=3]{$M$};
+	\draw [line width=2pt](6,0.1) node[below] {$t+\varDelta t$}--(6,-0.1) node [above=3]{$M_1$};
+	\draw[<->, line width=1pt] (0,-1)--(1.5,-1)node[above]{$S(t)$}--(3,-1);
+	\draw [dashed] (0,0)--(0,-2);
+	\draw [dashed] (3,0)--(3,-1);
+	\draw [dashed] (6,0)--(6,-2);
+	\draw[<->, line width=1pt] (0,-2)--(3,-2)node[above]{$S(t+\varDelta t)$}--(6,-2);
+	
+	\draw (4.5,0)node[below=-1]{$\varDelta t$};
+	\draw (4.5,0)node[above=-1]{$\varDelta S$};
+
+\end{tikzpicture}
+$$V=\frac{\varDelta S}{\varDelta t}=\lim_{\varDelta t \to 0}\frac{S(t+\varDelta t) - S(t)}{\varDelta t} = S^\prime(t)$$
+\subsection{Уравнение касательной к графику функции}
+\begin{multline*}
+	y_0=f(x_0)\\
+	y-y_0=k(x-x_0)\\
+	y=y_0+y^\prime(x_0)(x-x_0)\\
+\end{multline*}
+\section{Дифференцируемость функции в точке. Необходимое и достаточное условие дифференцируемости.  Непрерывность дифференцируемой функции.}
+\subsection{Дифееренцируемость функции в точке}
+$f(x)$ -- дифференцируема в точке $x$, если приращение функции $\varDelta f(x)$ можно представить в виде:
+\begin{multline*}
+\varDelta f(x)=A\cdot \varDelta x+\alpha (\varDelta x)\cdot \varDelta x \\
+A\text{ -- число}\\
+\alpha(\varDelta x) \text{ -- б.м. при }\varDelta x \to 0\\
+\end{multline*}
+\subsection{Необходимое и достаточное условие дифференцируемости.}
+$f(x)$ -- дифференцируема в точке $x \Leftrightarrow \exists$ конечная $f^\prime(x)$
+\textit{Доказательство:}
+\begin{multline*}
+	\boxed{\Leftarrow}\\
+	f^\prime(x)=\lim_{\varDelta x \to 0}\frac{f(x+ \varDelta x)-f(x)}{\varDelta x}\\
+	A=\lim f(x) \Leftrightarrow f(x)-A=\alpha(x)\\
+	\Downarrow\\
+	f^\prime(x)=\frac{\varDelta f(x)+\alpha_1(\varDelta x)}{\varDelta x}\\
+	\Downarrow\\
+	f^\prime(x)\varDelta x=\varDelta f(x)+\alpha_1(\varDelta x)\\
+	\Downarrow\\
+	\varDelta f(x)=f^\prime(x)\varDelta x+ \alpha(x)\varDelta x\\
+	\alpha = -\alpha_1 \Rightarrow f(x) \text{ -- дифференцируема}\\
+	\end{multline*}
+	\begin{multline*}
+		\boxed{\Rightarrow}\\
+		f^\prime(x)=\lim_{\varDelta x \to 0}\frac{\varDelta f(x)}{\varDelta x}=\lim_{\varDelta x \to 0} \frac{A\varDelta x + \alpha(\varDelta x) \varDelta x}{\varDelta x}=\\
+		=\lim_{\varDelta x \to 0} A + \lim_{\varDelta x \to 0} \alpha(\varDelta x)= A + 0 = A\\
+		\blacksquare\\
+	\end{multline*}
+\subsection{Непрерывность дифференцируемой функции}
+$f(x)$ -- дифференцируема в точке $x \Rightarrow f(x)$ непрерывна в точке $x$ 
+\section{Дифференциал функции. Геометрический смысл дифференциала. Производная суммы, произведения и частного двух функций.}
+$f^\prime(x)$ -- конечная $\Rightarrow \underbrace{f^\prime(x)\varDelta x} + \alpha(\varDelta x)\varDelta x$\\
+$df(x)=f^\prime(x)\varDelta x$ -- дифференциал функции $f(x)$ в точке $x$.\\
+$dx=\varDelta x$\\
+$$f^\prime(x)=\frac{df(x)}{dx}$$
+\subsection{Геометрический смысл дифференциала}
+$df(x)=\tg\varphi\cdot\varDelta x$\\
+\begin{tikzpicture}
+	%	\draw[step=1.0,gray! 40,thin] (-5,-1) grid (5.5,4.5);
+	\draw[->] (-5,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	\draw[line width=1pt] plot[domain=-1:5] (\x, {1+(\x - 1)*\x/(\x+4)});
+	\draw[] plot[domain=-5:5] (\x, {(\x+4)/5});
+	
+	\draw (-2,0) arc (0:23.2:1);
+	\draw (-1.5, 0)node[above=-1]{$\varphi$};
+	%	
+	\draw [dashed] (0,1)--(6.5,1);
+	\draw [dashed] (0,2.5)--(6.5,2.5);
+	\draw [dashed] (4,0)--(4,2.5) node [above] {$M$};
+	\draw [dashed] (1,0)--(1,1) node[above]{$M_0$};
+	\draw [dashed] (0,1.6)--(5,1.6);
+	\draw [blue, line width=1pt](4,1) -- (4,2.5);
+	\draw [red, line width=1pt](4,1) -- (4,1.6);
+
+	\draw [<->, red, line width=1pt](4.5,1) --(4.5, 1.3) node [right]{$df(x)$} -- (4.5,1.6);
+	\draw [<->, blue, line width=1pt](6,1) --(6, 1.75) node [right]{$\varDelta f(x)$} -- (6,2.5);
+	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$x$};
+	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+	\draw [line width=2pt] (0.1,1)--(-0.1,1) node [left] {$f(x)$};
+	\draw [line width=2pt] (0.1,2.5)--(-0.1, 2.5) node [left] {$f(x+\varDelta x)$};
+	\draw (2.5,0)node[above=-1]{$\varDelta x$};
+\end{tikzpicture}
+\subsection{Производная суммы}
+\begin{align*}
+	u&=u(x); v = v(x)\\\\
+	y^\prime &= \lim_{\varDelta x \to 0}\frac{\left(u(x+\varDelta x)\pm v(x+\varDelta x)\right) - \left(u(x)\pm v(x)\right)}{\varDelta x}=\\
+	&=\lim_{\varDelta x \to 0}\left(\frac{u(x+\varDelta x) - u(x)}{\varDelta x}\right)\pm \lim_{\varDelta x \to 0}\left(\frac{v(x+\varDelta x) - v(x)}{\varDelta x}\right)=\\
+	&= u^\prime(x)\pm v^\prime(x)\\
+\end{align*}
+\subsection{Производная произведения}
+\begin{align*}
+	u&=u(x); v = v(x)\\\\
+	y^\prime &= \lim_{\varDelta x \to 0}\frac{\left(u(x+\varDelta x)\cdot v(x+\varDelta x)\right) - \left(u(x)\cdot v(x)\right)}{\varDelta x}=\\
+	&=\lim_{\varDelta x \to 0}\frac{\left(u(x)+\varDelta u\right) \cdot \left(v(x + \varDelta v)\right) - u(x)\cdot v(x)}{\varDelta x}=\\
+	&=\lim_{\varDelta x \to 0}\frac{\cancel{u(x)v(x)}+u(x)\varDelta v+ v(x)\varDelta u +\varDelta u \varDelta v -\cancel{u(x) v(x)}}{\varDelta x}=\\
+	&=\lim_{\varDelta x \to 0}\left(u(x)\cdot\frac{\varDelta v}{\varDelta x}+ v(x)\frac{\varDelta u}{\varDelta x} +\frac{\varDelta u \varDelta v}{\varDelta x}\right)=\\
+	&=u(x)\lim_{\varDelta x \to 0}\frac{\varDelta v}{\varDelta x}+v(x)\lim_{\varDelta x \to 0}\frac{\varDelta u}{\varDelta x}+\cancelto{0}{\lim_{\varDelta x \to 0}\varDelta u}\cdot \lim_{\varDelta x \to 0}\frac{\varDelta v}{\varDelta x}=\\
+	&=u(x)v^\prime(x)+u^\prime(x)v(x)
+\end{align*}
+\subsection{Производная частного}
+\begin{align*}
+	u&=u(x); v = v(x)\\\\
+	y^\prime &= \lim_{\varDelta x \to 0} \frac
+	{\frac
+		{u(x+\varDelta x)}
+		{v(x+\varDelta x)}
+		 - 
+		 \frac
+		 {u(x)}
+		 {v(x)}}
+	{\varDelta x}=
+	\lim_{\varDelta x \to 0} \frac
+	{\frac
+		{u(x)+\varDelta u}
+		{v(x)+\varDelta v}
+		- 
+		\frac
+		{u(x)}
+		{v(x)}}
+	{\varDelta x}=\\
+	&= \lim_{\varDelta x \to 0} \frac
+	{
+		\cancel{u(x)v(x)}+v(x)\varDelta u-\cancel{u(x)v(x)}-u(x)\varDelta v
+	}
+	{\varDelta x v(x)\left(v(x)+\varDelta v\right)}=\\
+	&= \lim_{\varDelta x \to 0} \frac
+	{
+		v(x)\varDelta u-u(x)\varDelta v
+	}
+	{\varDelta x \left(v^2(x)+\varDelta vv(x)\right)}=\\
+	&= \lim_{\varDelta x \to 0} \frac
+	{
+		\cancel{u(x)v(x)}+v(x)\varDelta u-\cancel{u(x)v(x)}-u(x)\varDelta v
+	}
+	{\varDelta x v(x)\left(v(x)+\varDelta v\right)}=\\
+	&= \lim_{\varDelta x \to 0} \frac{
+		v(x)\frac
+		{\varDelta u}{\varDelta x}-u(x)\frac{\varDelta v}{\varDelta x}
+	}
+	{v^2(x)+\varDelta vv(x)}=\\
+	&=\frac{\begin{gathered}
+		v(x)\cdot \lim_{\varDelta x \to 0}\frac{\varDelta u}{\varDelta x} - u(x)\cdot \lim_{\varDelta x \to 0}\frac{\varDelta v}{\varDelta x}\end{gathered}}{\begin{gathered}
+		v^2+v\cdot\lim_{\varDelta x \to 0}\varDelta u \end{gathered}}=\\
+	&=\frac{v(x)u^\prime(x)-u(x)v^\prime(x)}{v^2(x)}\\
+\end{align*}
+\section{Теорема о дифференцируемости сложной функции. }
+\begin{multline*}
+	\left .
+	\begin{gathered}
+		\begin{aligned}
+			&u(x)\text{ -- дифференцируема в точке }x\\
+			&f(u)\text{ -- дифференцируема в точке }u=u(x)\\
+		\end{aligned}
+	\end{gathered}
+	\right\}\Rightarrow f(u(x))\text{ -- дифференцируема в точке } x\\
+	\frac{df}{dx}=f_u^\prime\left(u(x)\right)\cdot u^\prime(x)\\	
+\end{multline*}
+\textit{Доказательство:}
+\begin{align*}
+	\varDelta f&=f\left(u+\varDelta u\right)-f(u)=f^\prime(u)\varDelta u + \alpha(\varDelta u)\cdot\varDelta u\\
+	f^\prime(x)&=\lim_{\varDelta x \to 0}\frac{f^\prime(u)\varDelta u + \alpha(\varDelta u)\cdot \varDelta u}{\varDelta x}=\\
+	&=\lim_{\varDelta x \to 0}\frac{f^\prime(u)\varDelta u}{\varDelta x} + \cancelto{0}{\lim_{\varDelta x \to 0}\frac{\alpha(\varDelta u)\cdot \varDelta u}{\varDelta x}}=\\
+	&=f^\prime(u)\lim_{\varDelta x \to 0}\frac{\varDelta u}{\varDelta x}=f^\prime(u)u^\prime(x)\\
+	\blacksquare\\
+\end{align*}
+\section{Производная обратной функции. Вывод производных обратных тригонометрических функций. }
+\subsection{Производная обратной функции}
+$y=f(x)$ -- монотонна в $U(x)$ и дифференцируема в точке $x, f^\prime(x)\neq0$\\
+$g(y)$ -- обратная для $f(x)$\\
+$\Rightarrow g(y)$ -- дифференцируема в точке $y=y(x)$ и $$g^\prime(y)=\frac{1}{f^\prime(x)}$$
+\textit{Доказательство:}
+\begin{align*}
+	g^\prime(y)&=\lim_{\varDelta y \to 0}\frac{g(y+\varDelta y)-g(y)}{\varDelta y}=\lim_{\varDelta x \to 0}\frac{(x+\varDelta x) - x}{f(x+\varDelta x)-f(x)}=\\
+	&=\lim_{\varDelta x \to 0}\frac{1}{\frac{f(x+\varDelta x)-f(x)}{(x+\varDelta x) - x}}=\frac{1}{f^\prime(x)}\\
+	\blacksquare\\
+\end{align*}
+\subsection{Вывод обратных тригонометрических функций}
+\begin{align*}
+	&f(x)=\sin x, &x\in\left[-\frac{\pi}{2};\frac{\pi}{2}\right]\\
+	&g(x)=\arcsin y\\
+	&g^\prime(y)=\frac{1}{cos x}=\frac{1}{\sqrt{1-y^2}}\\
+	&\left(\arcsin x\right)^\prime = \frac{1}{\sqrt{1-x^2}}\\
+	&\left(\arccos x\right)^\prime = -\frac{1}{\sqrt{1-x^2}}\\
+	&\left(\arctg x\right)^\prime = \frac{1}{1+x^2}\\
+	&\left(\arcctg x\right)^\prime = -\frac{1}{1+x^2}\\
+\end{align*}
+\section{Правило логарифмического дифференцирования. Его применение к нахождению производных функций  $f(x)=a^x$,   $f(x)=x^a$.}
+\begin{multline*}
+	y=f^\prime(x)\\
+	\left(\ln f(x)\right)^\prime = \frac{f^\prime (x)}{f(x)}\\
+\end{multline*}
+\begin{enumerate}
+	\item $f(x)=a^x$
+	\begin{multline*}
+		\ln f(x)=x \ln a\\
+		\frac{f^\prime(x)}{f(x)}=\ln a\\
+		f^\prime(x)=\ln a\cdot f(x)= \ln a\cdot a^x\\
+	\end{multline*}
+	\item $f(x)=x^a$
+	\begin{multline*}
+		\ln f(x) = a \ln x\\
+		\frac{ f^\prime(x)}{f(x)}=\ln a\\
+		f^\prime(x)=\frac{a}{x}\cdot x^a\\
+		f^\prime(x) = a\cdot x^{a-1}\\
+	\end{multline*}
+\end{enumerate}
+\section{Производные и дифференциалы высших порядков.}
+\begin{multline*}
+	y=f(x)\\
+	\exists f^\prime(x) \text{ -- первого порядка}\\
+	\left(f^\prime(x)\right)^\prime \text{ -- производная второго порядка}\\
+	\text{\textit{Обозначение}:}\\
+		f^{\prime\prime}(x) = \frac{d^2f}{dx^2}\\
+		f^{\prime\prime\prime}(x)= \frac{d^3f}{dx^3}\\
+		f^{(4)}(x)= \frac{d^4f}{dx^4}\\
+		f^{(n)}(x)= \frac{d^nf}{dx^n}\\
+\end{multline*}
+\textit{Дифференциал:}
+\begin{multline*}
+	df(x)=f^\prime(x)dx\\
+	\text{2-го порядка}:\\
+	d(df(x))=d(f^\prime(x)dx)=\left(f^\prime(x)d(x)\right)^\prime dx=f^{\prime\prime}(x)dx^2\\
+	\text{3-го порядка}:\\
+	f^{\prime\prime\prime}(x)dx^3\\
+	\text{4-го порядка}:\\
+	f^{(4)}(x)dx^4\\
+	\text{n-го порядка}:\\
+	f^{(n)}(x)dx^n\\
+\end{multline*}
+\section{Таблица производных.}
+\includegraphics[width=1\linewidth]{1298487_1.jpeg}
+\section{Дифференцирование функций, заданных параметрически (первая и вторая производные). Теорема Ролля, ее геометрический смысл.}
+\subsection{Дифференцирование функций, заданных параметрически}
+\begin{multline*}
+	\begin{cases}
+		x=\varphi(t) \text{ -- дифференцируема, монотонна}\\
+		y=\psi(t)\text{ -- дифференцируема}\\
+	\end{cases}\\
+	\Downarrow\\
+	\exists \varphi^{-1}(x)\Rightarrow y(x)=\psi\left(\varphi^{-1}(x)\right)\\
+	\text{Обозначим } g(x)=\varphi^{-1}(x)\\
+	g(x) \text{ -- обратная для }\varphi(x)\Rightarrow g^\prime(x)=\frac{1}{\varphi^\prime(t)}\\
+	y(x)= \psi(g(x))\\
+	y^\prime(x)=\psi^\prime(x)\cdot g^\prime(x) = \psi^\prime(t)\cdot \frac{1}{\varphi^\prime(t)}=\frac{\psi^\prime(t)}{\varphi^\prime(t)}\\
+	y^{\prime\prime}(x)=\frac{\left(\frac{\psi^\prime(t)}{\varphi^\prime(t)}\right)^\prime}{\varphi^\prime(t)}\\
+\end{multline*}
+\subsection{Теорема Ролля}
+$f(x)$ -- непрерывна на $[a;b]$, дифференцируема на $(a;b)$\\
+$f(a)=f(b) \Rightarrow \exists$ хотя бы одна $c \in (a; b)\colon f^\prime(c)=0$\\
+\textit{Доказательство:}
+\begin{enumerate}
+	\item $f(x) = const \Rightarrow c $ -- $\forall$ точка $\in (a; b)$
+	\item $f(x) \neq const \Rightarrow $ по Теореме Ферма.
+\end{enumerate}
+\begin{tikzpicture}
+	%	\draw[step=1.0,gray! 40,thin] (-5,-1) grid (5.5,4.5);
+	\draw[->] (-1,0)--(4,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,4) node[above]{$y$};
+
+	\draw[line width=1pt] plot[domain=1:3] (\x, {2-(\x-2)*(\x-2)});
+	
+%	\draw (-2,0) arc (0:23.2:1);
+%	\draw (-1.5, 0)node[above=-1]{$\varphi$};
+	%	
+	\draw [dashed] (0,1)--(3,1);
+	\draw [dashed] (1,0)--(1,1);
+	\draw [dashed] (3,0)--(3,1);
+	\draw [dashed] (2,0)--(2,2);
+	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$a$};
+	\draw [line width=2pt](3,0.1)--(3,-0.1) node [below=]{$b$};
+	\draw [line width=2pt](2,0.1)--(2,-0.1) node [below=3]{$c$};
+	\fill (1, 1) circle (2pt);
+	\fill (3, 1) circle (2pt);
+	\fill (2, 2) circle (2pt);
+	%	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+%	\draw [dashed] (0,2.5)--(6.5,2.5);
+%	\draw [dashed] (4,0)--(4,2.5) node [above] {$M$};
+%	\draw [dashed] (1,0)--(1,1) node[above]{$M_0$};
+%	\draw [dashed] (0,1.6)--(5,1.6);
+%	\draw [blue, line width=1pt](4,1) -- (4,2.5);
+%	\draw [red, line width=1pt](4,1) -- (4,1.6);
+%	
+%	\draw [<->, red, line width=1pt](4.5,1) --(4.5, 1.3) node [right]{$df(x)$} -- (4.5,1.6);
+%	\draw [<->, blue, line width=1pt](6,1) --(6, 1.75) node [right]{$\varDelta f(x)$} -- (6,2.5);
+%	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$x$};
+%	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+%	\draw [line width=2pt] (0.1,1)--(-0.1,1) node [left] {$f(x)$};
+%	\draw [line width=2pt] (0.1,2.5)--(-0.1, 2.5) node [left] {$f(x+\varDelta x)$};
+%	\draw (2.5,0)node[above=-1]{$\varDelta x$};
+\end{tikzpicture}
+\section{Теорема Коши. Формула конечных приращений Лагранжа, ее геометрический смысл.}
+\subsection{Теорема Коши}
+$f(x), g(x)$ -- непрерывны на $\left[a;b\right]$, дифференцируемы на $\left(a;b\right)$\\
+$g(x)\neq 0, x \in \left(a;b\right) \Rightarrow \exists$ хотя бы одна точка $c\in\left(a;b\right)$:\\
+$$\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f^\prime(c)}{g^\prime(c)}$$
+\textit{Доказательство:}
+\begin{multline*}
+	F(x)=f(x) - R\left(g(x)-g(a)\right)\\
+	F(a)=f(a)\\
+	F(b)= f(b)\\
+	\text{По Теореме Ролля: } \exists c \colon f^\prime(c)=0\\
+	F^\prime(c)=f^\prime(c)-R\left(g^\prime(c)-0\right)=0\\
+	\Downarrow\\
+	R=\frac{f^\prime(c)}{g^\prime(c)}\\
+	\blacksquare\\
+\end{multline*}
+\subsection{Формула конечных приращений Лагранжа}
+\begin{multline*}
+	a=x\\
+	b=x+\varDelta x\\
+	f(b)-f(a)=f^\prime(c)(b-a)\\
+	f(x+\varDelta x)-f(x)=f^\prime(c)\cdot \varDelta x\\
+	f(b)-f(a)=BC\\
+	b-a=AC\\
+	\frac{f(b)-f(a)}{b-a}=f^\prime(c)=\tg \angle BAC\\
+\end{multline*}
+\begin{tikzpicture}
+	%	\draw[step=1.0,gray! 40,thin] (-5,-1) grid (5.5,4.5);
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	
+	\draw[line width=1pt] plot[domain=1:3] (\x, {1+sqrt(9-((\x-4)*(\x-4))});	
+%	\draw[] plot[domain=-2:3] (\x, {1+(2*\x+1)/sqrt(5)});	
+	\draw[] plot[domain=-1:3] (\x, {1.194*\x+0.896});	
+	
+		\draw (-0.2,0) arc (0:30:1);
+%		\draw (0, 0)node[above=-1]{$\varphi$};
+	%	
+	\draw [dashed] (0,1)--(3,1);
+	\draw [dashed] (1,0)--(1,1);
+	\draw [dashed] (3,0)--(3,4);
+	\draw [dashed] (1.7,0)--(1.7,2.92);
+	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$a$};
+	\draw [line width=2pt](3,0.1)--(3,-0.1) node [below=]{$b$};
+	\draw [line width=2pt](1.7,0.1)--(1.7,-0.1) node [below=3]{$c$};
+	\fill (1, 1) circle (2pt) node[anchor=south west]{$A$};
+	\fill (3, 3.85) circle (2pt)node[anchor=north west]{$B$};
+	\fill (3, 1) circle (2pt)node[anchor=south west]{$C$};
+	\fill (1.7, 2.92) circle (2pt);
+	%	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+		\draw [dashed] (0,3.85)--(3,3.85);
+	%	\draw [dashed] (4,0)--(4,2.5) node [above] {$M$};
+	%	\draw [dashed] (1,0)--(1,1) node[above]{$M_0$};
+	%	\draw [dashed] (0,1.6)--(5,1.6);
+	%	\draw [blue, line width=1pt](4,1) -- (4,2.5);
+	%	\draw [red, line width=1pt](4,1) -- (4,1.6);
+	%	
+	%	\draw [<->, red, line width=1pt](4.5,1) --(4.5, 1.3) node [right]{$df(x)$} -- (4.5,1.6);
+	%	\draw [<->, blue, line width=1pt](6,1) --(6, 1.75) node [right]{$\varDelta f(x)$} -- (6,2.5);
+	%	\draw [line width=2pt](1,0.1)--(1,-0.1) node [below=3]{$x$};
+	%	\draw [line width=2pt](4,0.1)--(4,-0.1) node [below]{$x+\varDelta x$};
+		\draw [line width=2pt] (0.1,1)--(-0.1,1) node [left] {$f(a)$};
+		\draw [line width=2pt] (0.1,3.85)--(-0.1, 3.85) node [left] {$f(b)$};
+	%	\draw (2.5,0)node[above=-1]{$\varDelta x$};
+\end{tikzpicture}
+\section{Правило Лопиталя.}
+Для неопределенностей $\left[\frac{0}{0}\right]$ и $\left[\frac{\infty}{\infty}\right]$
+\paragraph{Теорема 1}
+$f(x), g(x)$ -- дифференцируемы в $U(a)$ и бесконечно малые в точке $a, g(a)\neq0\Rightarrow$
+$$\lim_{x\to a} \frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f^\prime(x)}{g^\prime(x)} \text{ если }\exists$$
+\textit{Доказательство:}
+\begin{multline*}
+	\frac{f(x)}{g(x)}=\frac{f(x) -f(a)}{g(x)-g(a)}=\text{(Теорема Коши)}=\frac{f^\prime(c)}{g^\prime(c)}=\lim_{x\to a}\frac{f^\prime(x)}{g^\prime(x)}
+\end{multline*}
+\paragraph{Теорема 2}
+$f(x), g(x)$ -- бесконечно большие в точке $a\Rightarrow$
+$$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f^\prime(x)}{g^\prime(x)}$$ 
+\section{Формула Тейлора для функции одной переменной с остаточным членом в форме Лагранжа и форме Пеано. }
+$f(x)$ -- определена в $U(x_0)$ и имеет в ней производные до $(n+1)$ порядка включительно, то для любого $x$ из этой окрестности найдется $c\in\left(x_0;x\right)\colon$
+$$f(x)=f(x_0)+\frac{f^\prime(x_0)}{1!}\left(x-x_0\right)+\frac{f^{\prime\prime}(x_0)}{2!}\left(x-x_0\right)^2+\dots+\frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^n+\frac{f^{(n+1)}(c)}{(n+1)!}\left(x-x_0\right)^{n+1}$$
+Последний член -- остаточный.\\
+В форме Лагранжа: $$\begin{gathered}
+	\frac{f^{(n+1)}(c)}{(n+1)!}\left(x-x_0\right)^{n+1}
+\end{gathered}$$
+В форме Пеано:
+$$\begin{gathered}
+	\frac{f^{(n+1)}(x_0)}{(n+1)!}\left(x-x_0\right)^{n+1}
+\end{gathered}, c\in (x;x_0)$$
+\section{Формулы Тейлора (Маклорена) для функций $y = e^x$,  $y = \sin x$, $y = \cos x$, ,   в окрестности точки x = 0.}
+При $x_0=0$
+\begin{multline*}
+	f(x)=f(0)+\frac{f^\prime(0)}{1!}x+\frac{f^{\prime\prime}(0)}{2!}x^2+\dots+\frac{f^{(n)}(0)}{n!}x^n+\frac{f^{(n+1)}(0)}{(n+1)!}x^{n+1}\\
+\end{multline*}
+\begin{enumerate}
+	\item $e^x$
+	\begin{align*}
+		f(x) &= e^x&&f(0)=1\\
+		f^\prime(x)&=e^x&&f^\prime(0)=1\\
+		f^{\prime\prime}(x)&=e^x&&f^{\prime\prime}(0)=1\\
+		&\dots&&\dots\\
+		f^{(n)}(x)&=e^x&&f^{(n)}(0)=1\\
+	\end{align*}
+	$$e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\dots+\frac{1}{n!}x^n+\frac{e^0}{(n+1)!}\\$$
+	\item $\sin x$
+	\begin{align*}
+		f(x) &= \sin x&&f(0)=0\\
+		f^\prime(x)&=\cos x&&f^\prime(0)=1\\
+		f^{\prime\prime}(x)&=-\sin(x)&&f^{\prime\prime}(0)=0\\
+		f^{\prime\prime\prime}(x)&=-\cos(x)&&f^{\prime\prime}(0)=-1\\
+		f^{(4)}(x)&=\sin(x)&&f^{\prime\prime}(0)=0\\
+	\end{align*}
+	$$\sin x=0+\frac{1}{1!}+\frac{0}{2!}-1\frac{1}{3!}+\frac{0}{4!}+\frac{1}{5!}+\dots+\left(-1\right)^n\frac{x^{2n+1}}{(2n+1)!}$$
+\end{enumerate}
+\section{Необходимое и достаточное условия возрастания (убывания) функции  y = f (x).}
+\subsection{Необходимое условие}
+$f(x)$ -- дифференцируема на $X$\\
+\begin{multline*}
+	f(x) \nearrow \Rightarrow f^\prime(x)\geq 0, x \in X\\
+	f(x) \searrow \Rightarrow f^\prime(x)\leq 0, x \in X\\
+\end{multline*}
+\subsection{Достаточное условие}
+\begin{multline*}
+	f^\prime(x)>0, x \in X \Rightarrow f(x)\nearrow\\
+	f^\prime(x)<0, x\in X \Rightarrow f(x) \searrow\\
+\end{multline*}
+\section{Определение экстремума функции $y = f (x)$. Необходимое условие экстремума.}
+$f(x)$ -- определена на $X$\\
+$x_0$ -- $max$, если $\exists U(x_0)\colon f(x)<f(x_0)\forall x \in U(x_0)$\\
+$x_0$ -- $min$, если $\exists U(x_0)\colon f(x)>f(x_0)\forall x \in U(x_0)$\\\\
+$f(x)$ -- дифференцируема на $X, x_0 \in X$\\
+$x_0$ -- точка экстремума $\Rightarrow f^\prime(x_0)=0$
+\section{Достаточное условие экстремума, использующее первую производную.}
+$f(x)$ -- дифференцируема на $X$\\
+$x_0$ -- бесконечно малая точка, определенная на $X$
+\begin{multline*}
+	\left.
+	\begin{gathered}
+		f^\prime(x)>0 \text{ при } x<x_0\\
+		f^\prime(x)<0 \text{ при } x>x_0\\
+	\end{gathered}
+	\right\}\Rightarrow x_0 - \max\\
+	\left.
+	\begin{gathered}
+		f^\prime(x)<0 \text{ при } x<x_0\\
+		f^\prime(x)>0 \text{ при } x>x_0\\
+	\end{gathered}
+	\right\}\Rightarrow x_0 - \min\\
+	f^\prime(x)=0 \text{ или } \infty  \text{ или } \nexists \text{ -- критическая точка (подозрительная на экстремум)}\\
+	f^\prime(x)>0 \text{ -- стационарная точка}\\
+\end{multline*}
+\section{Достаточное условие экстремума, использующее вторую производную.}
+$f(x)$ -- два раза непрерывна на $X$, дифференцируема на $X$\\
+$x=x_0$ -- стационарная точка $(f^\prime(x)=0)$\\
+$\Rightarrow f^{\prime\prime} < 0\Rightarrow x_0 - \max$\\
+$\Rightarrow f^{\prime\prime}> 0\Rightarrow x_0 - \min$\\
+\section{Определение направления выпуклости графика функции  $y = f (x)$. Признак выпуклости вверх и выпуклости вниз. Точки перегиба графика функции.}
+Выпуклая вверх на $X \Leftrightarrow \forall x, x+\varDelta x \in X \Rightarrow\varDelta y<dy$\\
+Выпуклая вниз на $X \Leftrightarrow \forall x, x+\varDelta x \in X \Rightarrow\varDelta y>dy$\\
+\subsection{Достаточный признак направления выпуклости}
+$f(x)$-- 2 раза дифференцируема на $X$\\
+$\Rightarrow$ Если $f^{\prime\prime}(x)>0$ на $X \Rightarrow$ график выпуклый вниз на $X$\\
+$\Rightarrow$ Если $f^{\prime\prime}(x)<0$ на $X \Rightarrow$ график выпуклый вверх на $X$\\
+Точки, в которых меняется направление выпуклости -- точки перегиба
+\section{Асимптоты графика функции  $y = f (x)$. Правило нахождения вертикальных и невертикальных асимптот.}
+\textbf{\textit{Асимптота}} -- прямая, к которой приближается график функции (расстояние $\to 0 $)
+\begin{enumerate}
+	\item Вертикальная асимптота.
+	$x=a$ -- вертикальная асимптота, если:
+	\begin{equation*}
+		\begin{cases}
+			a \text{ -- точка бесконечного разрыва}\\
+			a \text{ -- граничная точка области определения, если односторонний предел } = \infty\\
+		\end{cases}
+	\end{equation*}
+	\item Наклонная асимптота
+	\begin{multline*}
+		y=kx+b\\
+		k=\lim_{x\to \pm \infty}\frac{f(x)}{x}\\
+		b = \lim_{x\to \pm \infty}f(x)-kx\\
+	\end{multline*}
+Если хотя бы один из этих пределов $\nexists$ или $\infty$, то наклонных асимптот нет.
+\end{enumerate}
+\section{Определение первообразной. Теорема о двух первообразных одной функции.}
+$F(x), f(x)$ -- определена на $X$\\
+$F(x)$ -- первообразная для $f(x)$, если $F^\prime(x)=f(x)$
+\paragraph{Теорема} $F_1(x)$ и $F_2(x)$ -- первообразные для $f(x)$, то $F_1(x)=F_2(x)+c, c - const$\\
+\textit{Доказательство:}
+\begin{multline*}
+	\left(f_1(x)-F_2(x)\right)^\prime=f(x)-f(x)=0 \Rightarrow F_1(x)-F_2(x)= c\\
+\end{multline*}
+\section{Определение неопределенного интеграла и его свойства. Инвариантность формул интегрирования.}
+\section{Метод интегрирования по частям для неопределенного интеграла.}
+\section{Метод подстановки для неопределенного интеграла.}
+\section{Простейшие рациональные дроби и их интегрирование.}
+\section{Интегрирование дробно-рациональных функций.}
+\section{Интегрирование тригонометрических функций.}
+\section{Использование подстановок ,  , примеры.}
+\end{document}
