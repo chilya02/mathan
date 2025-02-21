@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage[makeroom]{cancel}
 \usepackage{enumerate}
+\usepackage{mdframed}
 
 \usepackage{tikz}
 %\DeclareMathSizes{10}{10}{10}{10}
@@ -29,13 +30,17 @@
 	\textit{Пример:}\\
 	$x^2$ -- первообразная для $2x$\\
 	$x^2+5$ -- первоообразная для $2x$
-	\paragraph{Теорема} $F_1(x), F_2(x)$ -- первообразные для $f(x) \Rightarrow F_1(x)=F_2(x)+C$ $(C=const)$\\
-	\textit{Доказательство:}
-	\begin{multline*}
+	\theoremstyle{plain}
+	\newtheorem*{Primitive Integral}{Теорема}
+	\begin{Primitive Integral}
+		$F_1(x), F_2(x)$ -- первообразные для $f(x) \Rightarrow F_1(x)=F_2(x)+C$ $(C=const)$
+	\end{Primitive Integral}
+	\begin{proof}
+		\begin{multline*}
 		\left(F_1(x) - F_2(x)\right)^\prime = F_1^\prime(x) - F_2^\prime(x)=f(x)-f(x)=0\\
 		\Rightarrow F_1(x)-F_2(x) = C\\
-		\blacksquare\\
-	\end{multline*}
+		\end{multline*}
+	\end{proof}
 	\paragraph{Неопределенный интеграл от функции $f(x)$ на $X$} -- совокупность всех первообразных $f(x)$ на $X$.
 	\begin{multline*}
 		\int f(x)dx=F(x)+C\\
@@ -53,13 +58,13 @@
 		\item 
 	$	\begin{gathered}
 			\int kf(x)dx=k\int f(x)dx
-		\end{gathered}$\\
-		\textit{Доказательство:}
-		\begin{multline*}
-			\left(\int kf(x)dx\right)^\prime=kf(x)\\
-			\left(k\int f(x)dx\right)^\prime=k\left(\int f(x) dx\right)^\prime=kf(x)\\
-			\blacksquare\\
-		\end{multline*}
+		\end{gathered}$
+		\begin{proof}
+			\begin{multline*}
+				\left(\int kf(x)dx\right)^\prime=kf(x)\\
+				\left(k\int f(x)dx\right)^\prime=k\left(\int f(x) dx\right)^\prime=kf(x)\\
+			\end{multline*}
+		\end{proof}
 		\item $\begin{gathered}
 			\int \left(f_1(x) + f_2(x)\right)dx = \int f_1(x) dx + \int f_2(x) dx
 		\end{gathered}$
@@ -104,24 +109,26 @@
 		\end{gathered}$
 	\end{enumerate}
 	\subsection{Инвариативность формул интегрирования}
-	\paragraph{Теорема}
-	$u(x)$ -- непрерывна и дифференцируема на $X$. \\$\begin{gathered}
-		\int f(x)dx=F(x)+C
-	\end{gathered}$\\
-	Область значений $u(x)$ совпадает с областью определения $f(x) \Rightarrow$.\\
-	$\Rightarrow\begin{gathered}
+	\newtheorem*{Integral of a complex function}{Теорема}
+	\begin{Integral of a complex function}
+		$u(x)$ -- непрерывна и дифференцируема на $X$. \\$\begin{gathered}
+			\int f(x)dx=F(x)+C
+		\end{gathered}$\\
+		Область значений $u(x)$ совпадает с областью определения $f(x) \Rightarrow$.\\
+		$\Rightarrow\begin{gathered}
 		\int f\left(u\left(x\right)\right)u^\prime\left(x\right)dx=F\left(u\left(x\right)\right)+C
-	\end{gathered}$\\\\
-	\textit{Доказательство:}\\
-	\begin{multline*}
-		\left.
-		\begin{aligned}
-			&\text{Производная левой части: }& f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
-			&\text{Производная правой части: }& F_u^\prime\left(u\right)u^\prime\left(x\right)=f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
-		\end{aligned}
-		\right\} \Rightarrow \text{равенство верно}\\
-		\blacksquare\\
-	\end{multline*}
+		\end{gathered}$
+	\end{Integral of a complex function}
+	\begin{proof}
+		\begin{multline*}
+			\left.
+			\begin{aligned}
+				&\text{Производная левой части: }& f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
+				&\text{Производная правой части: }& F_u^\prime\left(u\right)u^\prime\left(x\right)=f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
+			\end{aligned}
+			\right\} \Rightarrow \text{равенство верно}\\
+		\end{multline*}
+	\end{proof}
 	\subsubsection{Метод внесения под знак дифференциала}
 	\begin{equation*}
 		\int f(x)dx=F(x)+c \Rightarrow \int f(u)du=F(u)+C
@@ -143,7 +150,7 @@
 			\end{gathered}$
 		\end{enumerate}
 		\item $\begin{gathered}
-			\frac{dx}{x}=d\ln x \left\lgroup \ln \left| x\right|\right\rgroup
+			\frac{dx}{x}=d\ln x \left\lgroup \ln x \right\rgroup
 		\end{gathered}$\\\\
 		\textit{Примеры:}
 		\begin{enumerate}[1)]
