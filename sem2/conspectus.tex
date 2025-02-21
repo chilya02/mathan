@@ -29,17 +29,17 @@
 	\textit{Пример:}\\
 	$x^2$ -- первообразная для $2x$\\
 	$x^2+5$ -- первоообразная для $2x$
-	\paragraph{Теорема} $F_1(x), F_2(x)$ -- первообразные для $f(x) \Rightarrow F_1(x)=F_2(x)+c$ $(c=const)$\\
+	\paragraph{Теорема} $F_1(x), F_2(x)$ -- первообразные для $f(x) \Rightarrow F_1(x)=F_2(x)+C$ $(C=const)$\\
 	\textit{Доказательство:}
 	\begin{multline*}
 		\left(F_1(x) - F_2(x)\right)^\prime = F_1^\prime(x) - F_2^\prime(x)=f(x)-f(x)=0\\
-		\Rightarrow F_1(x)-F_2(x) = c\\
+		\Rightarrow F_1(x)-F_2(x) = C\\
 		\blacksquare\\
 	\end{multline*}
 	\paragraph{Неопределенный интеграл от функции $f(x)$ на $X$} -- совокупность всех первообразных $f(x)$ на $X$.
 	\begin{multline*}
-		\int f(x)dx=F(x)+c\\
-		c\in \mathbb{R}\\
+		\int f(x)dx=F(x)+C\\
+		C\in \mathbb{R}\\
 	\end{multline*}
 	\subsection{Свойства неопределенных интегралов}
 	\begin{enumerate}[1)]
@@ -48,7 +48,7 @@
 		 \end{gathered}$
 		\item 
 		$\begin{gathered}
-			\int f(x)dx=f(x) + c
+			\int f(x)dx=f(x) + C
 		\end{gathered}$
 		\item 
 	$	\begin{gathered}
@@ -67,8 +67,95 @@
 	\subsection{Таблица интегралов}
 	\begin{enumerate}[1)]
 		\item $\begin{gathered}
-			\int x^mdx=\frac{x^{m+1}}{m+1}+c, \space \space m \neq -1
+			\int x^mdx=\frac{x^{m+1}}{m+1}+C, \space \space m \neq -1
 		\end{gathered}$
-		\textit{$ $}
+		\item $\begin{gathered}
+			\int \frac{1}{x}dx=\ln\left| x\right| + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int e^xdx=e^x+C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int a^xdx=\frac{a^x}{\ln a}+C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \sin xdx=-\cos x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \cos x dx = \sin x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{1}{\cos^2x}dx=\tg x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{1}{\sin^2x}dx=-\ctg x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{dx}{\sqrt{1-x^2}}=\arcsin x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{dx}{1+x^2}=\arctg x + C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{dx}{x^2-a^2}=\frac{1}{2a}\ln\left|\frac{x-a}{x+a} \right| +C
+		\end{gathered}$
+		\item $\begin{gathered}
+			\int \frac{dx}{\sqrt{x^2\pm a^2}}=\ln \left| x+\sqrt{x^2\pm a^2}\right| + C
+		\end{gathered}$
+	\end{enumerate}
+	\subsection{Инвариативность формул интегрирования}
+	\paragraph{Теорема}
+	$u(x)$ -- непрерывна и дифференцируема на $X$. \\$\begin{gathered}
+		\int f(x)dx=F(x)+C
+	\end{gathered}$\\
+	Область значений $u(x)$ совпадает с областью определения $f(x) \Rightarrow$.\\
+	$\Rightarrow\begin{gathered}
+		\int f\left(u\left(x\right)\right)u^\prime\left(x\right)dx=F\left(u\left(x\right)\right)+C
+	\end{gathered}$\\\\
+	\textit{Доказательство:}\\
+	\begin{multline*}
+		\left.
+		\begin{aligned}
+			&\text{Производная левой части: }& f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
+			&\text{Производная правой части: }& F_u^\prime\left(u\right)u^\prime\left(x\right)=f\left(u\left(x\right)\right)u^\prime\left(x\right)&\\
+		\end{aligned}
+		\right\} \Rightarrow \text{равенство верно}\\
+		\blacksquare\\
+	\end{multline*}
+	\subsubsection{Метод внесения под знак дифференциала}
+	\begin{equation*}
+		\int f(x)dx=F(x)+c \Rightarrow \int f(u)du=F(u)+C
+	\end{equation*}
+	\begin{enumerate}[1.]
+		\item $\begin{gathered}
+			dx=\frac{1}{a}d\left(ax+b\right)
+		\end{gathered}$\\\\
+		\textit{Примеры:}
+		\begin{enumerate}[1)]
+			\item $\begin{gathered}
+				\int e^{2x}dx=\frac{1}{2}\int e^{2x}d2x=\frac{1}{2}\int e^udu=\frac{1}{2}e^{2x}+C
+			\end{gathered}$
+			\item $\begin{gathered}
+				\int \frac{dx}{3x+1}=\frac{1}{3}\int \frac{d3x}{3x+1}=\frac{1}{3}\int \frac{d(3x+1)}{3x+1}=\frac{1}{3}\ln\left|3x+1 \right|+C
+			\end{gathered}$
+			\item $\begin{gathered}
+				\int \frac{dx}{\sqrt[4]{1-2x}}=-\frac{1}{2}\int \frac{d(-2x+1)}{\sqrt[4]{1-2x}}=-\frac{2}{3}\left(1-2x\right)^\frac{3}{4}+C
+			\end{gathered}$
+		\end{enumerate}
+		\item $\begin{gathered}
+			\frac{dx}{x}=d\ln x \left\lgroup \ln \left| x\right|\right\rgroup
+		\end{gathered}$\\\\
+		\textit{Примеры:}
+		\begin{enumerate}[1)]
+			\item $\begin{gathered}
+				\int \frac{dx}{x \ln x}=\int \frac{d \ln x}{\ln x}=\ln\left| \ln x\right| + C
+			\end{gathered}$
+			\item $\begin{gathered}
+				\int \frac{dx}{x\sqrt{2-5\ln x}}=\int \frac{d\ln x}{\sqrt{2-5\ln x}}=-\frac{1}{5}\int \frac{d\left(-5\ln x+2\right)}{\sqrt{2-5\ln x}}=-\frac{2}{5}\sqrt{2-5\ln x} +C
+			\end{gathered}$
+			\item $\begin{gathered}
+				\int \frac{dx}{x\left(3\ln x + 2\right)^2}=-\frac{1}{3\left(3\ln x + 2\right)} + C
+			\end{gathered}$
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
